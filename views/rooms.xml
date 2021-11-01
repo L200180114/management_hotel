@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <!-- This is tree view of room -->
+        <record id="room_tree" model="ir.ui.view">
+            <field name="name">hotel.rooms.view.tree</field>
+            <field name="model">hotel.rooms</field>
+            <field name="arch" type="xml">
+                <tree string="Room">
+                    <field name="name"/>
+                    <field name="harga"/>
+                </tree>
+            </field>
+        </record>
+    
+        <record id="room_action" model="ir.actions.act_window">
+            <field name="name">Kamar Hotel</field>
+            <field name="res_model">hotel.rooms</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face"> 
+                    Create your firts order hotel
+                </p>
+            </field>
+        </record>
+    
+    </data>
+    <menuitem id="room_id" name="Kamar" action="room_action" parent="hotel_root" sequence="13"/>
+
+</odoo>
